@@ -219,7 +219,7 @@ class valUpdater:
             f.write(json.dumps(maps))
             f.close()
 
-    def _update_characters(self):
+    def _update_ranks(self):
 
         r = requests.get("https://valorant-api.com/v1/competitivetiers")
         ranks = json.loads(r.text).get("data")[-1].get("tiers")
@@ -233,3 +233,4 @@ class valUpdater:
         self._update_characters()
         self._update_maps()
         self._update_seasons()
+        self._update_ranks()
